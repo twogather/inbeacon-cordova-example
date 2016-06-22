@@ -19,6 +19,7 @@
 ## Usage
 
 To get connected with InBeacon API you'll need a working clientId and secret which you can add/edit under the settings page:
+
 <img src="settings.png" alt="Settings" />
 
 You can also edit the defaults in `www/js/index.js` at line number 21
