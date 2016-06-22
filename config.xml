@@ -25,6 +25,5 @@
     <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
-        <hook type="after_prepare" src="scripts/add-backgroundmode.js" />
     </platform>
 </widget>
