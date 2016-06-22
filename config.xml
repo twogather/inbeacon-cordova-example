@@ -8,6 +8,8 @@
         Apache Cordova Team
     </author>
     <content src="index.html" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="webviewbounce" value="false" /> 
     <plugin name="cordova-plugin-whitelist" spec="1" />
     <plugin name="cordova-plugin-inbeacon" spec="https://github.com/twogather/cordova-plugin-inbeacon" />
     <access origin="*" />
