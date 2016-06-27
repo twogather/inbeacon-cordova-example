@@ -18,8 +18,8 @@
  */
 var app = {
 
-    clientId    : '',
-    secret      : '',
+    clientId    : 'your-clientid',
+    secret      : 'your-secret',
     user    : {
         name: 'John Doe',
         email: 'j.doe@example.com'
@@ -85,11 +85,11 @@ var app = {
             app.log('Succesfully initialized inBeacon API');
             cordova.plugins.inBeacon.setLogLevel(cordova.plugins.InBeacon.LOG_DEBUG, function () {
                 app.log('loglevel: debug')
-            }, function () {
-                app.error('failed to set loglevel');
+            }, function (error) {
+                app.error('failed to set loglevel ' + error);
             });
-        }, function () {
-            app.error('inBeacon initialization failed');
+        }, function (error) {
+            app.error('inBeacon initialization failed ' + error);
         });
     },
 
@@ -157,11 +157,19 @@ var app = {
         });
     },
 
+    askPermissions: function() {
+        cordova.plugins.inBeacon.askPermissions(function () {
+            app.log('askPermissions has been called succesfully');
+        }, function (error) {
+            app.error('askPermissions failed: ' + error);
+        });
+    },
+
     checkCapabilitiesAndRights: function () {
         cordova.plugins.inBeacon.checkCapabilitiesAndRights(function () {
             app.log('checkCapabilitiesAndRights: Everything is awesome');
         }, function (error) {
-            app.error('Oops, we have a problem: ' + error.description);
+            app.error('Oops, we have a problem: ' + error);
         });
     },
 
