@@ -29,6 +29,29 @@ To check the requirements after installation use `cordova requirements`.
 4. cordova platform add android
 5. cordova run android *(Uses attached device if available, otherwise runs on emulator)*
 
+## Install & run on Android using Cordova versions <4
+Installing the plugin using Cordova v3 or older requires an additional step (5).
+
+1. npm install -g cordova
+2. git clone https://github.com/twogather/inbeacon-cordova-example.git
+3. cd inbeacon-cordova-example
+4. cordova platform add android
+5. copy inBeacon SDK and dependencies (.jar files) to folder `platforms/android/libs/`
+
+  Download the inBeacon SDK and it's dependencies:
+  - com.inbeacon:android.sdk:1.+
+  - com.android.support:support v4:22.2.0
+  - org.altbeacon:android beacon library:2.8.1
+  - com.loopj.android:android async http:1.4.9
+
+  You need to add the .jar files of these libraries.  
+  Some libraries, like the inBeacon SDK, are distributed as an .aar file. This file can be unzipped like any other .zip file. Extract the classes.jar file from this .aar archive, and rename it to something like 'inBeaconSDK1.5.jar'.
+
+  Place the 4 .jar files in the directory `platforms/android/libs/` and continue as usual.
+
+6. cordova run android *(Uses attached device if available, otherwise runs on emulator)*
+
+
 ## Usage
 
 To get connected with inBeacon API you'll need a working clientId and secret which you can add/edit under the settings page:
